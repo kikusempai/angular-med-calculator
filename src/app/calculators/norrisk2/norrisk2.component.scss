@@ -1,0 +1,48 @@
+h3 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+.container {
+    display: flex;
+}
+.form-label {    
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 500;
+
+    small {
+        color: #ccc;
+    }
+}
+.radio-button {
+    margin-right: 10px;
+}
+.input-text {
+    width: 70%;
+    display: block;
+
+    input {
+        min-height: 35px;
+        margin-right: -15px;
+        margin-left: -15px;
+        width: calc(100% + 30px);
+    }
+}
+.result-container {
+    text-align: center;
+    margin-top: 45%;
+
+    .risk {
+        font-size: 50px;
+        font-weight: 500;
+    }
+    .result {
+        font-size: 25px;
+        color: #777;
+    }
+}
+mat-error {
+    color: red;
+}

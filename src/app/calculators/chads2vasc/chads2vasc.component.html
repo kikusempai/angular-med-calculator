@@ -1,0 +1,21 @@
+<div class="container">
+    <h3>&Aring;rlig risiko for slag ved atrieflimmer</h3>
+</div>
+<div class="container">
+    <div class="col-7">
+            <app-checkbox-button  *ngFor="let item of keys"
+                [value]="values[item].value"
+                [wide]="values[item].wide"
+                [fieldName]="item"
+                [text]="values[item].label"
+                (valueChanged)="valueChanged($event)"
+            ></app-checkbox-button>
+    </div>
+
+    <div class="col-4">
+        <div class="result-container">
+            <div class="risk">{{ chads }} %</div>
+            <div class="result" [innerHTML]="result"></div>
+        </div>
+    </div>
+</div>

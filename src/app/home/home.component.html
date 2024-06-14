@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2 side-nav-container">
+            <button class="side-nav-toggle" (click)="activateTab(0)" [ngClass]="{'active': activeTab === 0 }">Norrisk2</button>
+            <button class="side-nav-toggle" (click)="activateTab(1)" [ngClass]="{'active': activeTab === 1 }">CHADS2Vasc</button>
+        </div>
+        <div class="col-10" [hidden]="activeTab !== 0">
+            <app-norrisk2></app-norrisk2>
+        </div>
+        <div class="col-10" [hidden]="activeTab !== 1">
+            <app-chads2vasc></app-chads2vasc>
+        </div>
+    </div>
+
+</div>

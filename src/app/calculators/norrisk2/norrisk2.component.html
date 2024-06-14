@@ -1,0 +1,81 @@
+
+<div class="container">
+    <h3>Beregning av 10-årsrisiko for fatalt og ikke-fatalt hjerteinfarkt eller hjerneslag</h3>
+</div>
+<div class="container">
+    <div class="col-7">
+        <form id="norrisk2" [formGroup]="form">
+            <mat-radio-group class="radio-group" formControlName="gender">
+                <label class="form-label">Kjønn</label>
+                <mat-radio-button class="radio-button" [value]="1">Kvinne
+                </mat-radio-button>
+                <mat-radio-button class="radio-button" [value]="2">Mann
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <mat-radio-group class="radio-group" formControlName="smoking">
+                <label class="form-label">Røyk</label>
+                <mat-radio-button class="radio-button" [value]="0">Ikke-røyker
+                </mat-radio-button>
+                <mat-radio-button class="radio-button" [value]="1">Røyker
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <label class="form-label">Alder</label>
+            <mat-form-field class="input-text">
+                <input matInput type="number" placeholder="45-74" formControlName="age" />
+                <mat-error *ngIf="form.controls['age'].errors">
+                    Vennligst oppgi en verdi mellom 45 og 74 år
+                </mat-error>
+            </mat-form-field>
+
+            <label class="form-label">Systolisk blodtrykk <small>(mmHg)</small></label>
+            <mat-form-field class="input-text">
+                <input matInput type="number" placeholder="120-160" formControlName="systolic" />
+                <mat-error *ngIf="form.controls['systolic'].errors">
+                    Vennligst oppgi en verdi mellom 120 - 160 mmHg
+                </mat-error>
+            </mat-form-field>
+
+            <label class="form-label">Total kolesterol <small>(mmol/L)</small></label>
+            <mat-form-field class="input-text">
+                <input matInput type="number" placeholder="4.0-8.0" formControlName="cholesterol" />
+                <mat-error *ngIf="form.controls['cholesterol'].errors">
+                    Vennligst oppgi en verdi mellom 4.0 og 8.0 mmol/L
+                </mat-error>
+            </mat-form-field>
+
+            <mat-radio-group class="radio-group" formControlName="familyCHD">
+                <label class="form-label">Førstegradsslektninger med hjerteinfarkt før 60 år</label>
+                <mat-radio-button class="radio-button" [value]="0">0 </mat-radio-button>
+                <mat-radio-button class="radio-button" [value]="1">1 </mat-radio-button>
+                <mat-radio-button class="radio-button" [value]="2">2+
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <mat-radio-group class="radio-group" formControlName="BPmed">
+                <label class="form-label">Legemiddelbehandlet hypertensjon</label>
+                <mat-radio-button class="radio-button" [value]="0">Nei
+                </mat-radio-button>
+                <mat-radio-button class="radio-button" [value]="1">Ja
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <mat-radio-group class="radio-group" formControlName="HDL">
+                <label class="form-label">Lavt HDL kolesterol
+                    <small>(Menn: < 1,0 mmol/l. Kvinner: < 1,3 mmol/l)</small></label>
+                <mat-radio-button class="radio-button" [value]="0">Nei
+                </mat-radio-button>
+                <mat-radio-button class="radio-button" [value]="1">Ja
+                </mat-radio-button>
+            </mat-radio-group>
+        </form>
+    </div>
+
+    <div class="col-4">
+        <div class="result-container">
+            <div class="risk">{{ risk }} %</div>
+            <div class="result">{{ result }}</div>
+        </div>
+    </div>
+</div>
