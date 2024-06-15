@@ -42,8 +42,8 @@ export class Chads2VascComponent {
     this.values[event.field].value = event.value;
 
     // edge case for radio-like behaviour for age items (picked up from the original website)
-    if (event.field === 'a') this.values['a2'].value = !event.value;
-    if (event.field === 'a2') this.values['a'].value = !event.value;
+    if (event.field === 'a' && this.values['a'].value && event.value) this.values['a2'].value = !event.value;
+    if (event.field === 'a2' && this.values['a2'].value && event.value) this.values['a'].value = !event.value;
 
     this.calculate();
   }
