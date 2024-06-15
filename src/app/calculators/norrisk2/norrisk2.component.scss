@@ -46,3 +46,19 @@ h3 {
 mat-error {
     color: red;
 }
+.help-toggle {
+    padding: 3px 10px;
+    border-radius: 22px;
+    color: #ccc;
+    background-color: #fff;
+    border: 2px #ccc solid;
+    font-size: 20px;
+
+    &.active {
+        color: #34e7d6;
+        border-color: #34e7d6;
+    }
+}
+.help-wrapper {
+    margin-top: 30px;
+}

@@ -1,6 +1,8 @@
 
 <div class="container">
-    <h3>Beregning av 10-årsrisiko for fatalt og ikke-fatalt hjerteinfarkt eller hjerneslag</h3>
+    <h3>Beregning av 10-årsrisiko for fatalt og ikke-fatalt hjerteinfarkt eller hjerneslag
+        <button class="help-toggle" (click)="showHelp = !showHelp" [ngClass]="{ active: showHelp }">?</button>
+    </h3>
 </div>
 <div class="container">
     <div class="col-7">
@@ -77,5 +79,38 @@
             <div class="risk">{{ risk }} %</div>
             <div class="result">{{ result }}</div>
         </div>
+    </div>
+</div>
+
+<div class="container help-wrapper" *ngIf="showHelp">
+    <div class="col">
+        <h5>Tilleggsfaktorer</h5>
+        <ul>
+            <li>Sørasiatisk etnisitet <strong>x1,5</strong></li>
+            <li>Revmatoid artritt <strong>x1,4</strong></li>
+            <li>Abdominal fedme<br><span style="font-size: 0.8em;">(Menn: > 100 cm.   Kvinner: > 88 cm)</span></li>
+            <li>Psykososial belastning og stress</li>
+        </ul>
+        <h5>Tolkning</h5>
+        <p>Sørasiatisk etnisitet og revmatoid artritt inngår ikke i risikomodellen, men de foreslåtte multiplikasjonsfaktorene antyder risikoøkningen assosiert med disse faktorene.</p>
+    </div>
+    <div class="col">
+        <h5>Legemiddelbehandling bør vurderes ved beregnet risiko:</h5>
+        <ul>
+            <li>over 5 % ved alder 45 - 54 år</li>
+            <li>over 10 % ved alder 55 - 64 år</li>
+            <li>over 15 % ved alder 65 - 74 år</li>
+            <li>når råd om endring av levevaner ikke har gitt tilstrekkelig effekt etter 3-12 måneder.</li>
+        </ul>
+
+        <p style="white-space: pre-wrap;">Tiltaksgrenser ved alder < 45 år og ≥ 75 år må vurderes individuelt.
+        Vurder også legemiddelbehandling uavhengig av beregnet risiko ved:</p>
+        <ul>
+            <li>totalkolesterol ≥ 7,0 mmol/l (unntatt hos kvinner over 50 år)</li>
+            <li>systolisk blodtrykk ≥ 160 mmhg</li>
+            <li>diabetes (se retningslinje)</li>
+            <li>påvist endeorganskade som: asymptomatisk aterosklerose, nyreskade eller venstre ventrikkelhypertrofi</li>
+        </ul>
+
     </div>
 </div>

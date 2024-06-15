@@ -25,6 +25,8 @@ export class Norrisk2Component implements OnInit{
   risk: number = 1;
   result: string = '';
 
+  showHelp: boolean = false;
+
   constructor() {
     this.form = new FormGroup({
       gender: new FormControl(1),
